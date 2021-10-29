@@ -36,23 +36,30 @@ int main(void)
         {
             LED3 = 1;
             __delay_ms(100);
+            LED3 = 0;
+            __delay_ms(100);
             LED4 = 1;
+            __delay_ms(100);
+            LED4  = 0;
             __delay_ms(100);
             LED5 = 1;
             __delay_ms(100);
-            LED6 = 1;
-            __delay_ms(100);
-            LED3 = 0;
-            __delay_ms(100);
-            LED4 = 0;
-            __delay_ms(100);
             LED5 = 0;
+            __delay_ms(100);
+            LED6 = 1;
             __delay_ms(100);
             LED6 = 0;
             __delay_ms(100);
         }
         
         // Add code for your Program Analysis and Programming Activities here:
+
+                // Make a tone while SW5 is held
+        if(SW5 == 0)
+        {
+            BEEPER = !BEEPER;
+            __delay_us(567);
+        }
 
         // Activate bootloader if SW1 is pressed.
         if(SW1 == 0)
@@ -229,7 +236,10 @@ int main(void)
  * 
  * 4. Using modified versions of the original SW2 'if' structure, create a
  *    program that makes a unique LED flashing pattern for each pushbutton.
- * 
+
+ *  I'm gonna be restarting from here because that's where I left off when this 
+    project didn't save :(.
+
  *    Test each of your flashing patterns. Describe what happens when more than
  *    one button is held. Do all of the patterns try to flash the LEDs at the
  *    same time, or sequentially? Explain why this is.
