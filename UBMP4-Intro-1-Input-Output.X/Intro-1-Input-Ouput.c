@@ -35,42 +35,44 @@ int main(void)
         if(SW2 == 0)
         {
             LED3 = 1;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED3 = 0;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED4 = 1;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED4  = 0;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED5 = 1;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED5 = 0;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED6 = 1;
-            __delay_ms(1999);
+            __delay_ms(100);
             LED6 = 0;
-            __delay_ms(4205);
+            __delay_ms(100);
         }
         
         // Add code for your Program Analysis and Programming Activities here:
+    if(SW3 == 0 && SW4 == 1)
+    {
+        LED3 = 1; 
+        __delay_ms(100);
+        LED5 = 1;
+        __delay_ms(100);
+        LED4 = 1;
+        __delay_ms(100);
+        LED6 = 1; 
+        __delay_ms(100);
+        LED3 = 0; 
+        __delay_ms(100);
+        LED5 = 0;
+        __delay_ms(100);
+        LED4 = 0;
+        __delay_ms(100);
+        LED6 = 0; 
+        __delay_ms(100);
+    }
 
-                // Make a tone while SW5 is held
-        if(SW5 == 0)
-        {
-            BEEPER = !BEEPER;
-            __delay_us(567);
-        }
-        
-        if(SW4 == 0)
-        {
-            BEEPER = !BEEPER;
-            __delay_us(600);
-        }
-
-        if(SW3 == 0)
-        {
-            BEEPER = !BEEPER;
-            __delay_us(900);
         }
         // Activate bootloader if SW1 is pressed.
         if(SW1 == 0)
@@ -306,25 +308,33 @@ int main(void)
  *    more buttons at the same time. Describe what the tone waveform would look
  *    like when more than one button is held.
 
- *  
+ *  The different tone combine and make higher pitch than both by themselves. 
 
  * 6. Use individual 'if' structures to simulate 'Start' and 'Stop' buttons for
  *    an industrial machine. LED D4 should turn on when SW3 is pressed, stay on
  *    even after SW3 is released, and turn off when SW4 is pressed. Test your
  *    program to make sure it works.
- * 
+ *  
  * 7. Running your program from 6, above, describe what happens when both SW3
  *    and SW4 are pressed. Does LED D4 stay on? If so, how does the brightness
  *    of LED D4 compare between its normal on state following SW3 being pressed
  *    to this new state when both SW3 and SW4 are bing held? Can you explain
  *    why it changes?
- * 
+
+ *  When both ON and OFF switches are held down, the light still turns on, but 
+    it is dimmer than when SW3 only is actuated. This is becaue it is turning on
+    and off so fast that we cannot see it with our naked eye, and our brain makes 
+    an average and shows the light dimmer. And it can become dimmer if we decrease
+    the delay of the while loop. 
+
  * 8. As you can imagine, an industrial machine that is able to turn on even
  *    while its 'Stop' button is pressed represents a significant safety hazard.
  *    Using a logical conditional operator, modify the start-stop program from
  *    activity 5 to make it safer. SW3 should only turn on LED D4 if SW4 is
  *    released.
- * 
+
+ *  
+
  * 9. LED D1 is normally used to indicate that a program is running, but it can
  *    be controlled by your program as well. If you take a look at the UBMP4
  *    schematic, you will see that LED D1's cathode (or negative) pin is
