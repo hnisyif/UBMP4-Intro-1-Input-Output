@@ -53,26 +53,30 @@ int main(void)
         }
         
         // Add code for your Program Analysis and Programming Activities here:
-    if(SW3 == 0 && SW4 == 1)
-    {
-        LED3 = 1; 
-        __delay_ms(100);
-        LED5 = 1;
-        __delay_ms(100);
-        LED4 = 1;
-        __delay_ms(100);
-        LED6 = 1; 
-        __delay_ms(100);
-        LED3 = 0; 
-        __delay_ms(100);
-        LED5 = 0;
-        __delay_ms(100);
-        LED4 = 0;
-        __delay_ms(100);
-        LED6 = 0; 
-        __delay_ms(100);
-    }
+        if(SW3 == 0 && SW4 == 1)
+        {
+            LED3 = 1; 
+            __delay_ms(100);
+            LED5 = 1;
+            __delay_ms(100);
+            LED4 = 1;
+            __delay_ms(100);
+            LED6 = 1; 
+            __delay_ms(100);
+            LED3 = 0; 
+            __delay_ms(100);
+            LED5 = 0;
+            __delay_ms(100);
+            LED4 = 0;
+            __delay_ms(100);
+            LED6 = 0; 
+            __delay_ms(100);
+        }
 
+        if(SW5 == 0)   
+        {
+            LED1 = !LED1;
+            __delay_ms(50);
         }
         // Activate bootloader if SW1 is pressed.
         if(SW1 == 0)
@@ -333,7 +337,29 @@ int main(void)
  *    activity 5 to make it safer. SW3 should only turn on LED D4 if SW4 is
  *    released.
 
- *  
+ *  I don't know if I am supposed to write my code here, but I have all the files 
+    you want proof. 
+
+        if(SW3 == 0 && SW4 == 1)
+        {
+            LED3 = 1; 
+            __delay_ms(100);
+            LED5 = 1;
+            __delay_ms(100);
+            LED4 = 1;
+            __delay_ms(100);
+            LED6 = 1; 
+            __delay_ms(100);
+            LED3 = 0; 
+            __delay_ms(100);
+            LED5 = 0;
+            __delay_ms(100);
+            LED4 = 0;
+            __delay_ms(100);
+            LED6 = 0; 
+            __delay_ms(100);
+        }
+    
 
  * 9. LED D1 is normally used to indicate that a program is running, but it can
  *    be controlled by your program as well. If you take a look at the UBMP4
@@ -341,4 +367,9 @@ int main(void)
  *    connected to the microcontroller instead of the anode (positive) pin as
  *    with the other LEDs. This means that you need to make D1's output a zero
  *    to turn D1 on. Try it! Make a program that controls or flashes LED D1.
- */
+
+          if(SW5 == 0)   
+        {
+            LED1 = !LED1;
+            __delay_ms(50);
+        }
